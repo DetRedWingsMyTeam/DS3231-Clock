@@ -17,7 +17,7 @@ DS3231  rtc(SDA, SCL);
 Time  clock;
 
 #include <LiquidCrystal_I2C.h>
-LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 for a 16 chars and 2 line display
+LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 for a 20 chars and 4 line display
 char daysOfTheWeek[8][12] = {"null", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
 // Buffer for incoming data
@@ -30,7 +30,7 @@ void setup()
    Serial.begin(57600);
    
   while (!Serial) {
-      // will pause Zero, Leonardo, etc until serial console opens
+      // will pause until serial console opens
       delay(1);}
 
 	buffer_position = 0;
